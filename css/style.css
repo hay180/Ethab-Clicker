@@ -1,0 +1,23 @@
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: (-100%,-100%);
+    background: #999999;
+    color: #000000;
+    padding: 8px 12px;
+    border: 2px solid #000000;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+}
